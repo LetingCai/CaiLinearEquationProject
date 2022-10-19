@@ -1,2 +1,9 @@
-package PACKAGE_NAME;public class LinearEquationRunner {
+public class LinearEquationRunner
+{
+    public static void main(String[] args)
+    {
+        System.out.println(Integer.parseInt(" 1".strip()));
+
+    }
+
 }
