@@ -13,13 +13,13 @@ public class LinearEquation {
         this.cord2=cord2;
         x1=Integer.parseInt(cord1.substring(1,2));
         x2=Integer.parseInt(cord2.substring(1,2));
-        y1=Integer.parseInt(cord1.strip().substring(3,4));
-        y2=Integer.parseInt(cord2.strip().substring(3,4));
+        y1=Integer.parseInt(cord1.substring(3,cord1.length()-1).trim());
+        y2=Integer.parseInt(cord2.substring(3,cord2.length()-1).trim());
     }
 
     public double slope()
     {
-        return Math.round((y2-y1)/(x2-x1))*100/100;
+        return Math.round((y2-y1)/(x2-x1)*100)/100;
     }
     public double distance()
     {
@@ -35,7 +35,7 @@ public class LinearEquation {
     {
         int deltaY=Math.abs(y2-y1);
         int deltaX=Math.abs(x2-x1);
-        if(slope()<0) return "y=-" + deltaY + "/" + deltaX + "yIntercept()";
-        return "y="+deltaY+"/"+deltaX+"yIntercept()";
+        if(slope()<0) return "y=-" + deltaY + "/" + deltaX + "x"+yIntercept();
+        return "y="+deltaY+"/"+deltaX+"x"+yIntercept();
     }
 }
