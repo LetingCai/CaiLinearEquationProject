@@ -23,10 +23,10 @@ public class LinearEquationRunner
         cord2 = scan.nextLine();
 
         //Extract the coordinates from the string and assign them into corresponding variables.
-        x1=Integer.parseInt(cord1.substring(1,3).replaceAll(",",""));
-        x2=Integer.parseInt(cord2.substring(1,3).replaceAll(",",""));
-        y1=Integer.parseInt(cord1.substring(3,cord1.length()-1).replaceAll(",","").trim());
-        y2=Integer.parseInt(cord2.substring(3,cord2.length()-1).replaceAll(",","").trim());
+        x1=Integer.parseInt(cord1.substring(cord1.indexOf("(")+1,cord1.indexOf(",")).trim());
+        x2=Integer.parseInt(cord2.substring(cord2.indexOf("(")+1,cord2.indexOf(",")).trim());
+        y1=Integer.parseInt(cord1.substring(cord1.indexOf(",")+1,cord1.indexOf(")")).trim());
+        y2=Integer.parseInt(cord2.substring(cord2.indexOf(",")+1,cord2.indexOf(")")).trim());
 
         //Checks if the line is vertical; if not create a new LinearEquation object obj.
         if (x1==x2){System.out.println("\nThese points are on a vertical line: x = "+x1); return;}
