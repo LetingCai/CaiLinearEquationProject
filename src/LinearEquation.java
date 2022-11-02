@@ -44,7 +44,7 @@ public class LinearEquation {
         int deltaX=Math.abs(x2-x1);         //Set deltaX to the absolute value of the difference between x2 and y1.
         String returnString="y = ";         //First puts y = at the front of the equation.
         if (y1==y2){return returnString+=y1;}           //If the line is horizontal then concatenate y1.
-        if(slope()<0) {returnString += " -";}           //if the slope is negative concatenate the negative sign.
+        if(slope()<0) {returnString += "-";}           //if the slope is negative concatenate the negative sign.
         if(slope()==1 || slope()==-1){returnString+="x";}           //If the slope is 1 or -1 only concatenate x.
          else if(deltaY%deltaX==0){returnString += Math.abs(slope())+"x";} else {returnString+= deltaY+"/"+deltaX;}         //If the slope can be simplified use the value from slope() as the coefficient of x; If not use fractions.
         if (yIntercept() > 0){returnString+=" + "+yIntercept();} else if (yIntercept()<0) {returnString+=" - "+Math.abs(yIntercept());}         //Only attaches the y-intercept if it is not 0.
